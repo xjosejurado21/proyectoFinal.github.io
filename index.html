@@ -1,15 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Inicio</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El universo creativo de José Jurado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <ul>
-        <li><a href="Juego.html">Juego 3 en ralla</a></li>
+  <header class="hero" id="inicio">
+    <nav class="top-nav" aria-label="Navegación principal">
+      <span class="logo">José Jurado</span>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#worlds">Mundos</a></li>
+        <li><a href="#about-code">Tecnologías</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <div class="hero-avatar" aria-hidden="true">
+        <div class="avatar-shadow"></div>
+        <div class="avatar-body"></div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">Hola, soy</p>
+        <h1>José Jurado</h1>
+        <p class="lead">Diseño y desarrollo experiencias digitales que se sienten como pequeñas aventuras. Este portafolio es mi universo creativo: cada mundo es un proyecto y cada país, una funcionalidad, un reto o una historia que merece ser contada.</p>
+        <button id="startJourney" class="primary">Iniciar viaje</button>
+      </div>
+    </div>
+  </header>
 
-        <li><a href="#" onclick="mostrarInformacion()">Más información</a></li>
-    </ul>
-<script src="funcionamiento.js"></script>
+  <main>
+    <section id="worlds" class="worlds">
+      <h2>Explora mis mundos-proyecto</h2>
+      <p class="section-intro">Acompaña a mi coche explorador por esta ruta interestelar. Haz clic en cada planeta para conocer sus países (los módulos o entregables) y descubre una vista previa cuando el vehículo se acerque.</p>
+      <div class="map-container">
+        <div class="starfield" aria-hidden="true"></div>
+        <div class="journey-track" aria-hidden="true"></div>
+        <div id="traveller" role="img" aria-label="Coche explorador navegando entre mundos">
+          <div class="car-body"></div>
+          <div class="car-top"></div>
+          <div class="car-wheel front"></div>
+          <div class="car-wheel back"></div>
+          <div class="car-shadow"></div>
+        </div>
+        <button class="world-node" data-world="metropolis" data-x="18" data-y="65">
+          <span class="planet"></span>
+          <strong>Metropolis Full-Stack</strong>
+          <span class="caption">E-commerce y datos vivos</span>
+        </button>
+        <button class="world-node" data-world="muses" data-x="50" data-y="38">
+          <span class="planet"></span>
+          <strong>Muses Playground</strong>
+          <span class="caption">Interacciones y storytelling</span>
+        </button>
+        <button class="world-node" data-world="academy" data-x="78" data-y="70">
+          <span class="planet"></span>
+          <strong>Learning Nebula</strong>
+          <span class="caption">Experimentos y juegos</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="world-details" class="world-details" aria-live="polite">
+      <div class="world-info">
+        <div class="world-header">
+          <h3 id="world-title">Selecciona un mundo</h3>
+          <p id="world-tagline"></p>
+        </div>
+        <p id="world-description" class="world-description"></p>
+        <div class="tech-chips" id="world-stack" aria-label="Tecnologías utilizadas"></div>
+        <h4>Países dentro de este mundo</h4>
+        <ul class="country-list" id="country-list"></ul>
+      </div>
+      <aside class="preview-panel" aria-labelledby="preview-title">
+        <div class="preview-surface">
+          <h4 id="preview-title">Selecciona un país para ver la preview</h4>
+          <p id="preview-description"></p>
+          <ul id="preview-highlights" class="preview-highlights"></ul>
+          <a id="preview-link" class="preview-link" href="#" target="_blank" rel="noopener">Visitar proyecto</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about-code" class="about-code">
+      <h2>Cómo está construido este universo</h2>
+      <div class="about-grid">
+        <article>
+          <h3>Arquitectura narrativa</h3>
+          <p>El viaje está pensado como un <strong>mapa interactivo</strong> construido con HTML semántico y animaciones CSS. Cada planeta y cada país provienen de un único objeto JavaScript, lo que facilita ampliar el portafolio sin tocar el marcado principal.</p>
+        </article>
+        <article>
+          <h3>Interacciones accesibles</h3>
+          <p>El coche se desplaza suavemente mediante variables CSS actualizadas desde JavaScript. Se emplean <strong>transiciones de tipo spring</strong> y <strong>prefers-reduced-motion</strong> para respetar la accesibilidad. Además, los países son botones navegables por teclado.</p>
+        </article>
+        <article>
+          <h3>Pila tecnológica</h3>
+          <p>Trabajo habitualmente con <strong>HTML, CSS, JavaScript y PHP</strong>, apoyándome en bases de datos MySQL y frameworks modernos según las necesidades. También diseño APIs limpias y me apoyo en Git para versionado colaborativo.</p>
+        </article>
+        <article>
+          <h3>Iteración continua</h3>
+          <p>Cada mundo representa una etapa de aprendizaje. Al documentar <em>cómo</em> está hecho el código, refuerzo mi proceso de mejora continua y ofrezco a cada cliente transparencia sobre el camino técnico seguido.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Construyamos tu próximo mundo</h2>
+      <p>¿Quieres que diseñe una experiencia igual de inmersiva para tu proyecto? Escríbeme y convertimos tus objetivos en una aventura memorable.</p>
+      <div class="contact-actions">
+        <a class="primary" href="mailto:josejurado.dev@gmail.com">josejurado.dev@gmail.com</a>
+        <a class="secondary" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="secondary" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="current-year"></span> José Jurado Florido · "Cada commit es un kilómetro de viaje"</p>
+  </footer>
+
+  <script src="funcionamiento.js" defer></script>
 </body>
 </html>

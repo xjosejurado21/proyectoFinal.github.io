@@ -1,58 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3 En Raya</title>
-  <link rel="stylesheet" type="text/css" href="./estilos.css">
+  <title>Dojo 3 en Raya · José Jurado</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-  <main>
-    <h1>Bienvenido a mi página</h1>
+  <header class="game-hero">
+    <a class="back-home" href="index.html">← Volver al universo</a>
+    <h1>Dojo 3 en Raya</h1>
+    <p>Un experimento para poner en práctica lógica de juego, almacenamiento web y modos de color.</p>
+  </header>
+
+  <main class="game-page">
+    <section aria-labelledby="tablero-titulo" class="game-section">
+      <h2 id="tablero-titulo">Tablero interactivo</h2>
+      <p>Selecciona una casilla para que el jugador activo (<span aria-live="polite">🤺</span> o <span aria-live="polite">🤸</span>) marque su turno. El primero en completar una fila, columna o diagonal gana.</p>
+      <div class="game">
+        <div class="board" role="grid" aria-label="Tablero de 3 en raya">
+          <div id="0" class="square" role="gridcell" aria-label="Casilla 1"></div>
+          <div id="1" class="square" role="gridcell" aria-label="Casilla 2"></div>
+          <div id="2" class="square" role="gridcell" aria-label="Casilla 3"></div>
+          <div id="3" class="square" role="gridcell" aria-label="Casilla 4"></div>
+          <div id="4" class="square" role="gridcell" aria-label="Casilla 5"></div>
+          <div id="5" class="square" role="gridcell" aria-label="Casilla 6"></div>
+          <div id="6" class="square" role="gridcell" aria-label="Casilla 7"></div>
+          <div id="7" class="square" role="gridcell" aria-label="Casilla 8"></div>
+          <div id="8" class="square" role="gridcell" aria-label="Casilla 9"></div>
+        </div>
+      </div>
+      <div id="button-container">
+        <button id="mode-switch" type="button">Cambiar a modo noche</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="almacenamiento" class="storage-section">
+      <h2 id="almacenamiento">Almacenamiento Web</h2>
+      <div class="storage-panels">
+        <article>
+          <h3>LocalStorage</h3>
+          <p>Introduce un valor y persiste incluso si recargas la página.</p>
+          <label for="localInput" class="sr-only">Valor para guardar en LocalStorage</label>
+          <input type="text" id="localInput" placeholder="Escribe algo para recordar">
+          <button id="localButton" type="button">Guardar</button>
+          <p>Valor almacenado: <span id="localValue"></span></p>
+        </article>
+        <article>
+          <h3>SessionStorage</h3>
+          <p>Este valor solo vive durante la sesión actual del navegador.</p>
+          <label for="sessionInput" class="sr-only">Valor para guardar en SessionStorage</label>
+          <input type="text" id="sessionInput" placeholder="Dato de sesión">
+          <button id="sessionButton" type="button">Guardar</button>
+          <p>Valor almacenado: <span id="sessionValue"></span></p>
+        </article>
+      </div>
+    </section>
   </main>
-  <div id="button-container">
-    <button id="mode-switch">Cambiar a modo dia</button>
-</div>
-  <div class="game">
-    <div class="board">
-      <div id="0" class="square"></div>
-      <div id="1" class="square"></div>
-      <div id="2" class="square"></div>
-      <div id="3" class="square"></div>
-      <div id="4" class="square"></div>
-      <div id="5" class="square"></div>
-      <div id="6" class="square"></div>
-      <div id="7" class="square"></div>
-      <div id="8" class="square"></div>
-    </div>
-  </div>
-  <body>
-    <!DOCTYPE html>
-<html>
-  
-    <h1>Almacenamiento local y de sesión</h1>
-    
-    <section>
-      <h2>LocalStorage</h2>
-      <p>Introduce un valor para almacenar en el LocalStorage:</p>
-      <input type="text" id="localInput">
-      <button id="localButton">Guardar</button>
-      <p>El valor almacenado en LocalStorage es: <span id="localValue"></span></p>
-    </section>
-  
-    <section>
-      <h2>SessionStorage</h2>
-      <p>Introduce un valor para almacenar en el SessionStorage:</p>
-      <input type="text" id="sessionInput">
-      <button id="sessionButton">Guardar</button>
-      <p>El valor almacenado en SessionStorage es: <span id="sessionValue"></span></p>
-    </section>
-  
-    <script src="./storage.js"></script>
-    
-  
-  <script src="./funcionamiento.js"></script>
+
+  <footer class="game-footer">
+    <p>Forma parte de la Learning Nebula de José Jurado.</p>
+  </footer>
+
+  <script src="funcionamiento.js" defer></script>
 </body>
 </html>
